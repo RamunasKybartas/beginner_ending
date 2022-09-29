@@ -4,14 +4,6 @@ from random import choice
 zodis = choice(zodziai.tinkami_zodziai())
 print(zodis)
 
-
-
-
-# print(zodzio_raides)
-
-# speta_raide = input("Įveskite raidę: ")
-# spetos_raides.append(speta_raide)
-
 def pasleptas_zodis():
     spetos_raides = []
     zodzio_raides = []
@@ -21,7 +13,7 @@ def pasleptas_zodis():
         zodzio_raides.append(raide)
 
     for zvaigzdute in range(len(zodis)):
-            slaptos_raides.append("*")
+            slaptos_raides.append("\u273a")
 
     while len(zodzio_raides) > 0 and gyvybes > 0:
         
