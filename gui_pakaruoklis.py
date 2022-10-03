@@ -24,13 +24,13 @@ slaptos_raides = []
 zodzio_raides = []
 for raide in zodis:
     zodzio_raides.append(raide)
-print(zodzio_raides)
+# print(zodzio_raides)
 spetos_raides = []
 slaptos_raides = ["\u273a" for symbol in range(0, len(zodzio_raides))]
 gyvybes = IntVar()
 ft_index = IntVar()
 raidziu_setas = set(zodis)
-print(slaptos_raides)
+
 
 def rasti_raides(zodzio_raides, speta_raide):
     keiciamos_raides = [i for i, raide in enumerate(zodzio_raides) if raide == speta_raide]
@@ -40,7 +40,6 @@ def rasti_raides(zodzio_raides, speta_raide):
 # def gauti_skaicius(keiciamos_raides_index):
 #     for i in keiciamos_raides_index:
 #         print(i)
-
 
 def pasleptas_zodis():
     speta_raide = spejama_raide_entry.get().upper()
@@ -71,17 +70,15 @@ def pasleptas_zodis():
     spejamas_zodis_label["text"] = slaptos_raides
     spejama_raide_entry.delete(0, len(spejama_raide_entry.get()))
 
-print("".join(zodzio_raides))
-spejamas_zodis_label = Label(virsus, font=6, relief=SUNKEN, height=2, text=slaptos_raides)
+# print("".join(zodzio_raides))
+spejamas_zodis_label = Label(virsus, font=6, relief=SUNKEN, height=2, text=" ".join(slaptos_raides))
 spejamos_raides_label = Label(virsus, text="Įrašykite spėjamą raidę: ", font=1)
 spejama_raide_entry = Entry(virsus, width=3)
 mygtukas = Button(virsus,font=2, fg="#f00", text="Spėti\u261e", command=pasleptas_zodis)
 spejama_raide_entry.bind("<Return>", lambda event: pasleptas_zodis())
 
-
 fotke = Label(apacia, relief=RIDGE, image=lives6)
 statusbaras = Label(apacia, anchor=W, width=18, bd=2, font=3, relief=SUNKEN, height=2, text="Pradėkite žaidimą")
-
 
 virsus.pack(side=TOP)
 spejamas_zodis_label.grid(row=0, column=0, columnspan=4, sticky=W+E)
@@ -93,7 +90,6 @@ apacia.pack(side=BOTTOM)
 fotke.grid(row=0, columnspan=2, sticky=N)
 
 statusbaras.grid(row=1, column=0, columnspan=3, sticky=W+E, pady=2)
-
 
 langas.mainloop()
 
